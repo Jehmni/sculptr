@@ -1,0 +1,52 @@
+{
+    "$schema": "https://cursor.sh/schemas/v1/assistant-rules.json",
+    "rules": [
+      {
+        "goal": "Maintain a consistent and clean UI/UX design for Sculptr",
+        "rules": [
+          "Use Tailwind CSS with a light theme: primary color #22c55e (emerald-500), secondary #10b981 (emerald-600)",
+          "All UI must be fully responsive on mobile, tablet, and desktop",
+          "Use rounded-xl corners, soft shadows (shadow-md or shadow-lg), and padding (p-4 or more)",
+          "Headings use text-xl or larger; body text use text-base",
+          "Use consistent spacing between sections (e.g. space-y-4)"
+        ]
+      },
+      {
+        "goal": "Ensure stable and safe iteration on Sculptr codebase",
+        "rules": [
+          "Do not break existing functionality when making changes",
+          "Maintain backward compatibility with previously working features",
+          "Preserve component props, return types, and API contracts unless instructed otherwise",
+          "Avoid renaming variables or functions unless necessary for clarity"
+        ]
+      },
+      {
+        "goal": "Use Supabase as the unified backend service for Sculptr",
+        "rules": [
+          "Use Supabase MCP (Modular Client Patterns) for all database operations",
+          "Do not use raw SQL queries directly; use Supabase SDK MCP functions only",
+          "Centralize Supabase logic in `lib/supabase.ts` and reuse functions",
+          "Use environment variables for Supabase keys and URLs; never hardcode"
+        ]
+      },
+      {
+        "goal": "Keep frontend and backend code clean and modular",
+        "rules": [
+          "Frontend logic lives in `app/` or `components/` directories for UI and user input",
+          "Backend logic (FastAPI) lives in `api/` directory, split into routers and services",
+          "Business logic and validation live in backend service/helper modules",
+          "Avoid putting business logic in frontend components"
+        ]
+      },
+      {
+        "goal": "Build scalable and modular AI features in Sculptr",
+        "rules": [
+          "All AI prompt logic lives in `/services/ai/` directory with reusable functions",
+          "When generating workouts or meal plans, return structured data, not plain text",
+          "Separate image analysis (food scan) logic from meal generation logic",
+          "Allow AI output to be edited or overridden by the user in the UI"
+        ]
+      }
+    ]
+  }
+  
