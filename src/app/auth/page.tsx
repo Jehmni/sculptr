@@ -7,17 +7,6 @@ import AuthTabs from '@/components/AuthTabs';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
 import Logo from '@/components/Logo';
-                }`}>
-                  {registerMessage.text}
-                </div>
-              }className={`p-3 rounded-lg ${
-                  loginMessage.type === 'success' ? 'bg-[--accent]/10 text-[--accent]' : 'bg-red-100 text-red-800'
-                }`}>
-                  {loginMessage.text}
-                </div>
-              }'@/components/Input';
-import Button from '@/components/Button';
-import Logo from '@/components/Logo';
 
 type AuthFormData = {
   email: string;
@@ -175,6 +164,7 @@ export default function AuthPage() {
       setIsRegisterLoading(false);
     }
   };
+
   // Show loading state while checking auth
   if (isCheckingAuth) {
     return (
@@ -182,9 +172,12 @@ export default function AuthPage() {
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[--primary]"></div>
       </div>
     );
-  }return (
+  }
+
+  return (
     <div className="min-h-screen bg-gradient-to-br from-[--background] to-[--border] flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-[--surface] rounded-xl shadow-lg overflow-hidden border border-[--border]">        <div className="p-6">
+      <div className="w-full max-w-md bg-[--surface] rounded-xl shadow-lg overflow-hidden border border-[--border]">
+        <div className="p-6">
           <div className="flex flex-col items-center mb-10">
             <div className="p-6 bg-[--background] rounded-full mb-6 shadow-md" style={{ background: 'linear-gradient(135deg, #00C389, #0073CE, #003D73)' }}>
               <Logo size={120} showText={false} className="animate-pulse" />
@@ -213,9 +206,7 @@ export default function AuthPage() {
                 onChange={handleLoginChange}
                 placeholder="your@email.com"
                 error={loginErrors.email}
-              />
-              
-              <Input
+              />              <Input
                 label="Password"
                 id="login-password"
                 type="password"
@@ -225,11 +216,13 @@ export default function AuthPage() {
                 onChange={handleLoginChange}
                 placeholder="••••••••"
                 error={loginErrors.password}
+                className="text-[#0A1A2F] border-2"
+                style={{ color: '#0A1A2F', borderWidth: '2px' }}
               />
               
               {loginMessage && (
                 <div className={`p-3 rounded-lg ${
-                  loginMessage.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                  loginMessage.type === 'success' ? 'bg-[--accent]/10 text-[--accent]' : 'bg-red-100 text-red-800'
                 }`}>
                   {loginMessage.text}
                 </div>
@@ -255,9 +248,7 @@ export default function AuthPage() {
                 onChange={handleRegisterChange}
                 placeholder="your@email.com"
                 error={registerErrors.email}
-              />
-              
-              <Input
+              />              <Input
                 label="Password"
                 id="register-password"
                 type="password"
@@ -267,11 +258,13 @@ export default function AuthPage() {
                 onChange={handleRegisterChange}
                 placeholder="••••••••"
                 error={registerErrors.password}
+                className="text-[#0A1A2F] border-2"
+                style={{ color: '#0A1A2F', borderWidth: '2px' }}
               />
               
               {registerMessage && (
                 <div className={`p-3 rounded-lg ${
-                  registerMessage.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                  registerMessage.type === 'success' ? 'bg-[--accent]/10 text-[--accent]' : 'bg-red-100 text-red-800'
                 }`}>
                   {registerMessage.text}
                 </div>
@@ -288,8 +281,8 @@ export default function AuthPage() {
           )}
         </div>
         
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-          <p className="text-center text-gray-600 text-sm">
+        <div className="px-6 py-4 bg-[--background] border-t border-[--border]">
+          <p className="text-center text-[--text-secondary] text-sm">
             By continuing, you agree to our Terms of Service and Privacy Policy.
           </p>
         </div>
