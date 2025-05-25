@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+        <div className="flex flex-col items-center mb-12">
+          <div className="bg-white p-6 rounded-2xl shadow-lg mb-8 hover:shadow-xl transition-shadow duration-300">
+            <Logo size={180} showText={false} className="mb-6" />
+          </div>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Sculptr</h1>
+          <p className="text-gray-600 text-xl text-center max-w-lg">A modern platform for 3D design and modeling</p>
+        </div>
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by editing{" "}
@@ -24,6 +25,12 @@ export default function Home() {
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <Link
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-blue-600 text-white gap-2 hover:bg-blue-700 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            href="/auth"
+          >
+            Sign In / Register
+          </Link>
           <a
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"

@@ -11,6 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          dark: "var(--primary-dark)",
+        },
+        accent: "var(--accent)",
+        surface: "var(--surface)",
+        border: "var(--border)",
+        "text-secondary": "var(--text-secondary)",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },
